@@ -40,14 +40,7 @@ function ApplyLeave() {
 
     return (
         <div className="min-h-screen bg-slate-100">
-            <header className="border-b bg-white">
-                <div className="mx-auto max-w-4xl px-6 py-4">
-                    <h1 className="text-xl font-bold text-slate-900">
-                        Leave Management
-                    </h1>
-                </div>
-            </header>
-
+            
             <main className="mx-auto max-w-4xl px-6 py-8">
                 <div className="mb-6">
                     <h2 className="text-2xl font-bold text-slate-900">

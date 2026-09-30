@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import EmployeeDashboard from './pages/EmployeeDashboard'
 import ApplyLeave from './pages/ApplyLeave'
 import AdminDashboard from './pages/AdminDashboard'
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -11,9 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/employee" element={<EmployeeDashboard />} />
-        <Route path="/apply-leave" element={<ApplyLeave />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/employee" element={<ProtectedRoute role="EMPLOYEE"><EmployeeDashboard /></ProtectedRoute>} />
+        <Route path="/apply-leave" element={<ProtectedRoute role="EMPLOYEE"><ApplyLeave /></ProtectedRoute>} />
+        <Route path="/admin" element={<ProtectedRoute role="ADMIN"><AdminDashboard /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   )

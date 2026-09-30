@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import api from "../services/api";
+import Navbar from "../components/Navbar";
 
 function AdminDashboard() {
-
-    const navigate = useNavigate();
 
     const [leaves, setLeaves] = useState([]);
 
@@ -41,31 +39,9 @@ function AdminDashboard() {
         }
     };
 
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("role");
-        navigate("/login");
-    };
-
     return (
         <div className="min-h-screen bg-slate-100">
-            <header className="border-b bg-white">
-                <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-                    <div>
-                        <h1 className="text-xl font-bold text-slate-900">
-                            Leave Management
-                        </h1>
-                        <p className="text-sm text-slate-500">Admin Dashboard</p>
-                    </div>
-
-                    <button
-                        onClick={handleLogout}
-                        className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
-                    >
-                        Logout
-                    </button>
-                </div>
-            </header>
+            <Navbar title="Admin Dashboard" />
 
             <main className="mx-auto max-w-7xl px-6 py-8">
                 <div className="mb-8">
